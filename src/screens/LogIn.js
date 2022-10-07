@@ -105,7 +105,8 @@ const LoginScreen = ({navigation}) => {
             style={{
               width: SIZES.width * 0.3,
               height: SIZES.width * 0.3,
-              marginBottom: SIZES.height * 0.25,
+              marginBottom: SIZES.height * 0.03,
+              marginTop: SIZES.height * 0.45,
               // tintColor: focused ? COLORS.primary : COLORS.secondary,
             }}
           />
@@ -254,7 +255,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   buttonTextStyle2: {
-    color: COLORS.secondary,
+    color: COLORS.white,
     fontSize: 10,
     fontWeight: 'bold',
     textAlign: 'right',

@@ -90,8 +90,8 @@ const RegisterScreen = ({navigation}) => {
               style={{
                 width: SIZES.width * 0.3,
                 height: SIZES.width * 0.3,
-                marginBottom: SIZES.height * 0.15,
-                // tintColor: focused ? COLORS.primary : COLORS.secondary,
+                marginBottom: SIZES.height * 0.03,
+              marginTop: SIZES.height * 0.25,
               }}
             />
           </View>

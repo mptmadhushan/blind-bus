@@ -14,10 +14,10 @@ export default function OnBoard({navigation}) {
       style={styles.container}
       source={require('../assets/images/arBg.jpeg')}>
       <LinearGradient colors={['transparent', 'white']} style={styles.overlay}>
-        <Text style={styles.title2}>Wear a mask - save lives</Text>
+        <Text style={styles.title2}>Duis do consequat - magna esse q</Text>
         <Text style={styles.title}>
-          Use proven information about the disease and take the necessary
-          preventive measures.
+          Cupidatat qui est eu nulla reprehenderit deserunt nostrud dolor mollit
+          commodo.
         </Text>
         <TouchableOpacity
           onPress={() => {

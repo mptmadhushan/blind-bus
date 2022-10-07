@@ -33,7 +33,7 @@ export default function Home({navigation}) {
   return (
     <ImageBackground
       style={styles.container}
-      source={require('../assets/home.jpg')}>
+      source={require('../assets/images/arBg.jpeg')}>
       <LinearGradient
         colors={['transparent', COLORS.black, COLORS.black]}
         style={styles.overlay}>
@@ -45,7 +45,7 @@ export default function Home({navigation}) {
           <Text style={styles.title1}>What's new today?</Text>
         </View>
         <View style={styles.rowNorm}>
-          <TouchableOpacity
+          {/* <TouchableOpacity
             onPress={() => navigation.navigate('Activity')}
             style={styles.slide1}>
             <View style={styles.rowNw}>
@@ -59,8 +59,8 @@ export default function Home({navigation}) {
               />
               <Text style={styles.text001}>Analyze</Text>
             </View>
-          </TouchableOpacity>
-          <TouchableOpacity
+          </TouchableOpacity> */}
+          {/* <TouchableOpacity
             onPress={() => navigation.navigate('Water')}
             style={styles.slide1}>
             <View style={styles.rowNw}>
@@ -74,7 +74,7 @@ export default function Home({navigation}) {
               />
               <Text style={styles.text001}>Water</Text>
             </View>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
           <TouchableOpacity
             onPress={() => navigation.navigate('Humidity')}
             style={styles.slide1}>
@@ -83,61 +83,15 @@ export default function Home({navigation}) {
                 source={require('../assets/humi.png')}
                 resizeMode="contain"
                 style={{
-                  width: SIZES.width * 0.15,
-                  height: SIZES.width * 0.15,
+                  width: SIZES.width * 0.25,
+                  height: SIZES.width * 0.25,
                 }}
               />
-              <Text style={styles.text001}>Humidity</Text>
+              <Text style={styles.text001}>Support</Text>
             </View>
           </TouchableOpacity>
         </View>
-        {/* <View style={styles.rowNorm2}>
-          <TouchableOpacity
-            onPress={() => navigation.navigate('Instruction')}
-            style={styles.slide1}>
-            <View style={styles.centerFlex}>
-              <Image
-                source={require('../assets/instruction.png')}
-                resizeMode="contain"
-                style={{
-                  width: SIZES.width * 0.15,
-                  height: SIZES.width * 0.15,
-                }}
-              />
-              <Text style={styles.text001}>Instructions</Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => navigation.navigate('Chat')}
-            style={styles.slide1}>
-            <View style={styles.centerFlex}>
-              <Image
-                source={require('../assets/chat.png')}
-                resizeMode="contain"
-                style={{
-                  width: SIZES.width * 0.15,
-                  height: SIZES.width * 0.15,
-                }}
-              />
-              <Text style={styles.text001}>Chat Bot</Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => navigation.navigate('SPO2')}
-            style={styles.slide1}>
-            <View style={styles.centerFlex}>
-              <Image
-                source={require('../assets/spo2.png')}
-                resizeMode="contain"
-                style={{
-                  width: SIZES.width * 0.15,
-                  height: SIZES.width * 0.15,
-                }}
-              />
-              <Text style={styles.text001}>SPO2 Info</Text>
-            </View>
-          </TouchableOpacity>
-        </View> */}
+
         <TouchableOpacity
           style={styles.buttonStyle}
           activeOpacity={0.5}
@@ -183,7 +137,7 @@ const styles = StyleSheet.create({
   },
   text001: {
     color: COLORS.white,
-    fontSize: 13,
+    fontSize: 23,
     fontWeight: 'bold',
     marginTop: 5,
   },
@@ -227,7 +181,7 @@ const styles = StyleSheet.create({
     marginRight: SIZES.width * 0.06,
   },
   buttonStyle: {
-    backgroundColor: '#8C3FB7',
+    backgroundColor: '#C8723D',
     borderWidth: 0,
     color: '#FFFFFF',
     borderColor: '#00BFA6',
