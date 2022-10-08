@@ -15,7 +15,7 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import MapView, {PROVIDER_GOOGLE, Marker} from 'react-native-maps';
 import MapViewDirections from 'react-native-maps-directions';
 
-import {COLORS, FONTS, icons, SIZES, GOOGLE_API_KEY} from '../helpers';
+import {COLORS, FONTS, icons, SIZES} from '../helpers';
 import AsyncStorage from '@react-native-community/async-storage';
 import APIKit from '../helpers/apiKit';
 import GetLocation from 'react-native-get-location';
@@ -51,7 +51,7 @@ const Location = ({route, navigation}) => {
   const [packages, setPackage] = React.useState('');
   const [nearLocation, setNearLocation] = React.useState('');
   const [user, setUser] = React.useState('');
-  const [hotels, setHotels] = React.useState([]);
+  
   // const [location, setLocation] = React.useState('');
   const [streetName, setStreetName] = React.useState('');
   const [fromLocation, setFromLocation] = React.useState(
@@ -65,12 +65,6 @@ const Location = ({route, navigation}) => {
   const [isReady, setIsReady] = React.useState(false);
   const [angle, setAngle] = React.useState(0);
 
-  // const nearbyLocation = {
-  //   location: {
-  //     latitude: 6.90762293818244,
-  //     longitude: 79.86422714747269,
-  //   },
-  // };
 
   const getData = async () => {
     try {
@@ -93,26 +87,7 @@ const Location = ({route, navigation}) => {
     }
   };
 
-  const toHotel = hotel => {
-    console.log(':sad', hotel);
-    console.log(':setUser', user);
-    const payload = {hotel, user};
-    const onSuccess = ({data}) => {
-      // console.log(data);
-      navigation.navigate('Hotel', {hotel});
-    };
-
-    const onFailure = error => {
-      console.log('error', error);
-      // setLoading(false);
-
-      // this.setState({errors: error.response.data, isLoading: false});
-    };
-
-    // Show spinner when call is made
-
-    APIKit.post(`/book`, payload).then(onSuccess).catch(onFailure);
-  };
+  
 
   function getLocationNearest(location) {
     return fetch(`127.0.0.1:5000/:${location}`)
@@ -127,28 +102,7 @@ const Location = ({route, navigation}) => {
       });
   }
 
-  const getHotels = smallest => {
-    const newLocation = smallest.location.name || 'ccc';
-    console.log(':sad', packages);
-    console.log(smallest);
-    const onSuccess = ({data}) => {
-      // console.log(data);
-      setHotels(data);
-    };
-
-    const onFailure = error => {
-      console.log('error', error);
-      // setLoading(false);
-
-      // this.setState({errors: error.response.data, isLoading: false});
-    };
-
-    // Show spinner when call is made
-
-    APIKit.get(`/hotels/find/${packages}/${newLocation}`)
-      .then(onSuccess)
-      .catch(onFailure);
-  };
+  
 
   const getDirection = (lat1, lon1, lat2, lon2, unit) => {
     var radlat1 = (Math.PI * lat1) / 180;
@@ -276,18 +230,7 @@ const Location = ({route, navigation}) => {
       });
 
     getData();
-    getUserData();
-    getLocationNearest();
-    console.log('toLocation', toLocation);
-    let fromLoc = initialCurrentLocation.gps;
-    let toLoc = nearbyLocation.location;
-    // const currGps = {
-    //   latitude: currLocation.latitude,
-    //   longitude: currLocation.longitude,
-    // };
-    // let fromLoc = currGps;
-    let street = initialCurrentLocation.streetName;
-
+    
     let mapRegion = {
       latitude: (fromLoc.latitude + toLoc.latitude) / 2,
       longitude: (fromLoc.longitude + toLoc.longitude) / 2,
