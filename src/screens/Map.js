@@ -367,7 +367,7 @@ const Location = ({route, navigation}) => {
     test;
     const test = setTimeout(function () {
       console.log('call');
-      getHotels(smallest, packages);
+      getRoutes(smallest, packages);
     }, 3000);
   };
   var data = [
@@ -685,8 +685,8 @@ const Location = ({route, navigation}) => {
           contentContainerStyle={{
             paddingRight: Platform.OS === 'android' ? 20 : 0,
           }}>
-          {hotels
-            ? hotels.map((hotel, index) => (
+          {routess
+            ? routess.map((routes, index) => (
                 <TouchableOpacity
                   key={index}
                   style={{
@@ -705,10 +705,10 @@ const Location = ({route, navigation}) => {
                     shadowRadius: 5,
                     elevation: 10,
                   }}>
-                  {/* {category.hotel_name} */}
+                  {/* {category.routes_name} */}
 
                   <Image
-                    source={{uri: hotel.image}}
+                    source={{uri: routes.image}}
                     resizeMode="contain"
                     style={{
                       resizeMode: 'cover',
@@ -726,7 +726,7 @@ const Location = ({route, navigation}) => {
                       justifyContent: 'space-between',
                     }}>
                     <Text style={{...FONTS.body4, color: COLORS.black}}>
-                      {hotel.hotel_name}
+                      {routes.routes_name}
                     </Text>
                     <View
                       style={{
@@ -756,7 +756,7 @@ const Location = ({route, navigation}) => {
                       width: SIZES.width * 0.3,
                     }}
                     onPress={() => {
-                      toHotel(hotel);
+                      toroutes(routes);
                     }}>
                     <Text style={{...FONTS.b4, color: COLORS.white}}>
                       Book Now
